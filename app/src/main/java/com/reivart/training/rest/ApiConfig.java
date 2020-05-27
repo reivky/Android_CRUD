@@ -6,10 +6,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiConfig {
     public static ApiService getApiService(){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.43.81/lesKohDerry/ ")
+                .baseUrl("https://reivky.000webhostapp.com/lesKohDerry/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-        ApiService service =retrofit.create(ApiService.class);
-        return service;
+        return retrofit.create(ApiService.class);
     }
 }

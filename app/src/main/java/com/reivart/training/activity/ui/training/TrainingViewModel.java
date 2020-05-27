@@ -22,7 +22,7 @@ public class TrainingViewModel extends ViewModel {
     private MutableLiveData<List<TrainingModel>> trainingModelMutableLiveData;
     public LiveData<List<TrainingModel>> getTraining(){
         if (trainingModelMutableLiveData == null){
-            trainingModelMutableLiveData = new MutableLiveData<List<TrainingModel>>();
+            trainingModelMutableLiveData = new MutableLiveData<>();
             laodDataTraining();
         }
         return trainingModelMutableLiveData;
@@ -30,6 +30,7 @@ public class TrainingViewModel extends ViewModel {
     private void laodDataTraining() {
         ApiService apiService = ApiConfig.getApiService();
         apiService.getTraining("aktif").enqueue(new Callback<List<TrainingModel>>() {
+            @SuppressWarnings("NullableProblems")
             @Override
             public void onResponse(Call<List<TrainingModel>> call, Response<List<TrainingModel>> response) {
                 if (response.isSuccessful()) {
@@ -37,6 +38,7 @@ public class TrainingViewModel extends ViewModel {
                     Log.d(TAG, "onResponse: " + response.body());
                 }
             }
+            @SuppressWarnings("NullableProblems")
             @Override
             public void onFailure(Call<List<TrainingModel>> call, Throwable t) {
                 Log.d(TAG, "onFailure: " + t.getLocalizedMessage() + "|" + t.getMessage());
@@ -44,4 +46,3 @@ public class TrainingViewModel extends ViewModel {
         });
     }
 }
-

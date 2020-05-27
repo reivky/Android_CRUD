@@ -6,20 +6,19 @@
     app:startDestination="@+id/navigation_home">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.reivart.training.activity.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
-
-    <fragment
         android:id="@+id/navigation_training"
         android:name="com.reivart.training.activity.ui.training.TrainingFragment"
         android:label="@string/title_training"
         tools:layout="@layout/fragment_training" />
-
     <fragment
         android:id="@+id/navigation_tambah_training"
         android:name="com.reivart.training.activity.ui.tambahTraining.TambahTrainingFragment"
         android:label="@string/title_tambah_training"
         tools:layout="@layout/fragment_tambah_training" />
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.reivart.training.activity.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
 </navigation>

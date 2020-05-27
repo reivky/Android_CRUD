@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent">
@@ -17,7 +18,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/kode_training"
-                android:id="@+id/edt_kode_training"/>
+                android:id="@+id/edt_kode_training"
+                android:autofillHints=""
+                tools:ignore="TextFields" />
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -26,7 +29,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/nama_training"
-                android:id="@+id/edt_nama_training"/>
+                android:id="@+id/edt_nama_training"
+                android:autofillHints=""
+                tools:ignore="TextFields"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -35,7 +40,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/tipe_training"
-                android:id="@+id/edt_tipe_training"/>
+                android:id="@+id/edt_tipe_training"
+                android:autofillHints=""
+                tools:ignore="TextFields"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -44,7 +51,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/kuota_training"
-                android:id="@+id/edt_kuota_training"/>
+                android:id="@+id/edt_kuota_training"
+                android:autofillHints=""
+                tools:ignore="TextFields"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -53,7 +62,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/harga_training"
-                android:id="@+id/edt_harga_training"/>
+                android:id="@+id/edt_harga_training"
+                android:autofillHints=""
+                tools:ignore="TextFields"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -62,7 +73,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/gambar_link_training"
-                android:id="@+id/edt_gambar_training"/>
+                android:id="@+id/edt_gambar_training"
+                android:autofillHints=""
+                tools:ignore="TextFields"/>
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
     <Button
@@ -72,5 +85,5 @@
         android:background="@android:color/holo_blue_light"
         android:text="@string/simpan"
         android:textColor="@android:color/white"
-        android:textSize="20dp"/>
+        android:textSize="20sp"/>
 </LinearLayout>

@@ -25,9 +25,11 @@ public class TambahTrainingFragment extends Fragment {
     private EditText edtGambarTraining;
     private Button btnTraining;
 
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
         tambahTrainingViewModel = ViewModelProviders.of(this).get(TambahTrainingViewModel.class);
         View root = inflater.inflate(R.layout.fragment_tambah_training, container, false);
+
         edtKodeTraining = root.findViewById(R.id.edt_kode_training);
         edtNamaTraining = root.findViewById(R.id.edt_nama_training);
         edtTipeTraining = root.findViewById(R.id.edt_tipe_training);
@@ -35,6 +37,7 @@ public class TambahTrainingFragment extends Fragment {
         edtHargaTraining = root.findViewById(R.id.edt_harga_training);
         edtGambarTraining = root.findViewById(R.id.edt_gambar_training);
         btnTraining = root.findViewById(R.id.btn_training);
+
         btnTraining.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

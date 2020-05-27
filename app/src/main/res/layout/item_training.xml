@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
@@ -23,7 +24,8 @@
                 android:layout_height="200sp"
                 android:src="@drawable/ic_menu_gallery"
                 android:id="@+id/iv_image_training_item"
-                android:scaleType="fitXY"/>
+                android:scaleType="fitXY"
+                android:contentDescription="@string/todo" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -173,7 +175,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/btn_aktifkan_training_item"
-                    android:text="aktifkan"
+                    android:text="@string/aktifkan"
                     android:background="@android:color/holo_red_light"
                     android:textColor="@android:color/white"/>
             </LinearLayout>

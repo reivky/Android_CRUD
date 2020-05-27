@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -58,25 +57,24 @@ public class DetailTrainingActivity extends AppCompatActivity {
         Glide.with(DetailTrainingActivity.this).load(image).error(R.drawable.ic_menu_gallery).into(ivImageTrainingDetail);
 
         String idTraining = getIntent().getStringExtra(Config.BUNDLE_ID);
-        btnDeleteTrainingDetail.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ApiService apiService = ApiConfig.getApiService();
-                apiService.postDeleteTraining(idTraining).enqueue(new Callback<ResponseErrorModel>() {
-                    @Override
-                    public void onResponse(Call<ResponseErrorModel> call, Response<ResponseErrorModel> response) {
-                        if (response.isSuccessful()){
-                            Toast.makeText(DetailTrainingActivity.this, "Sukses Delete", Toast.LENGTH_SHORT).show();
-                            finishAffinity();
-                            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
-                        }
+        btnDeleteTrainingDetail.setOnClickListener(v -> {
+            ApiService apiService = ApiConfig.getApiService();
+            apiService.postDeleteTraining(idTraining).enqueue(new Callback<ResponseErrorModel>() {
+                @SuppressWarnings("NullableProblems")
+                @Override
+                public void onResponse(Call<ResponseErrorModel> call, Response<ResponseErrorModel> response) {
+                    if (response.isSuccessful()){
+                        Toast.makeText(DetailTrainingActivity.this, "Sukses Delete", Toast.LENGTH_SHORT).show();
+                        finishAffinity();
+                        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                     }
-                    @Override
-                    public void onFailure(Call<ResponseErrorModel> call, Throwable t) {
-                        Toast.makeText(DetailTrainingActivity.this, "Gagal Delete" + t.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });
-            }
+                }
+                @SuppressWarnings("NullableProblems")
+                @Override
+                public void onFailure(Call<ResponseErrorModel> call, Throwable t) {
+                    Toast.makeText(DetailTrainingActivity.this, "Gagal Delete" + t.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
         });
     }
 }

@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -32,12 +31,9 @@ public class TrainingFragment extends Fragment {
         rv.setHasFixedSize(true);
         rv.setLayoutManager(new LinearLayoutManager(getActivity()));
         TrainingViewModel trainingViewModel = ViewModelProviders.of(this).get(TrainingViewModel.class);
-        trainingViewModel.getTraining().observe(this, new Observer<List<TrainingModel>>() {
-            @Override
-            public void onChanged(List<TrainingModel> trainingModels) {
-                trainingAdapter = new TrainingAdapter(getActivity(), trainingModels);
-                rv.setAdapter(trainingAdapter);
-            }
+        trainingViewModel.getTraining().observe(this, trainingModels1 -> {
+            trainingAdapter = new TrainingAdapter(getActivity(), trainingModels1);
+            rv.setAdapter(trainingAdapter);
         });
         return root;
     }
